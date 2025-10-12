@@ -1,19 +1,15 @@
+import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
-import Team from "@/components/Team";
-import Testimonials from "@/components/Testimonials";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import CallToAction from "@/components/CallToAction";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Navigation />
       <Hero />
       <Features />
-      <Team />
-      <Testimonials />
-      <Contact />
-      <Footer />
+      <CallToAction />
     </div>
   );
 };
