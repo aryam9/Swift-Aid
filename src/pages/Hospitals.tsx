@@ -93,23 +93,25 @@ const Hospitals = () => {
               center={userLocation}
               zoom={13}
               scrollWheelZoom={false}
-              className="h-full w-full"
+              style={{ height: '100%', width: '100%' }}
             >
               <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              {nearbyHospitals.map((hospital) => (
-                <Marker key={hospital.id} position={hospital.coordinates}>
-                  <Popup>
-                    <div className="p-2">
-                      <h3 className="font-bold">{hospital.name}</h3>
-                      <p className="text-sm">{hospital.address}</p>
-                      <p className="text-sm font-medium mt-1">{hospital.distance} away</p>
-                    </div>
-                  </Popup>
-                </Marker>
-              ))}
+              {nearbyHospitals.map((hospital) => {
+                return (
+                  <Marker key={hospital.id} position={hospital.coordinates}>
+                    <Popup>
+                      <div className="p-2">
+                        <h3 className="font-bold">{hospital.name}</h3>
+                        <p className="text-sm">{hospital.address}</p>
+                        <p className="text-sm font-medium mt-1">{hospital.distance} away</p>
+                      </div>
+                    </Popup>
+                  </Marker>
+                );
+              })}
             </MapContainer>
           </div>
         </Card>
