@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Phone, Hospital, FileText, User, LayoutDashboard, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const features = [
   {
@@ -7,42 +8,48 @@ const features = [
     title: "First Aid",
     subtitle: "Quick access to first aid procedures for common emergencies",
     description: "Learn how to respond to medical emergencies with step-by-step guides for common situations.",
-    link: "View First Aid Guides"
+    link: "View First Aid Guides",
+    path: "/first-aid"
   },
   {
     icon: Phone,
     title: "Emergency Contacts",
     subtitle: "Store important emergency contact information",
     description: "Keep all your emergency contacts in one place for quick access during critical situations.",
-    link: "Manage Contacts"
+    link: "Manage Contacts",
+    path: "/emergency-contacts"
   },
   {
     icon: Hospital,
     title: "Nearby Hospitals",
     subtitle: "Find hospitals and medical facilities near you",
     description: "Quickly locate the nearest hospitals and medical facilities with contact information.",
-    link: "Find Hospitals"
+    link: "Find Hospitals",
+    path: "/hospitals"
   },
   {
     icon: FileText,
     title: "Medical History",
     subtitle: "Store your medical history for quick reference",
     description: "Keep track of your medical conditions, allergies, and medications for healthcare providers.",
-    link: "Update Medical History"
+    link: "Update Medical History",
+    path: "/medical-history"
   },
   {
     icon: User,
     title: "Personal Information",
     subtitle: "Manage your personal and emergency information",
     description: "Store your personal details and emergency instructions for first responders.",
-    link: "Update Personal Info"
+    link: "Update Personal Info",
+    path: "/personal-info"
   },
   {
     icon: LayoutDashboard,
     title: "Dashboard",
     subtitle: "View all your medical information at a glance",
     description: "Access a comprehensive overview of your medical information and emergency contacts.",
-    link: "Go to Dashboard"
+    link: "Go to Dashboard",
+    path: "/dashboard"
   }
 ];
 
@@ -71,12 +78,12 @@ const Features = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-sm mb-4">{feature.description}</p>
-                <a 
-                  href="#" 
+                <Link 
+                  to={feature.path}
                   className="text-primary text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all"
                 >
                   {feature.link} <ArrowRight className="h-4 w-4" />
-                </a>
+                </Link>
               </CardContent>
             </Card>
           ))}

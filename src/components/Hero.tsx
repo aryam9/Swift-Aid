@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="bg-rose-50 dark:bg-rose-950/20 py-24 md:py-32">
       <div className="container mx-auto px-4 text-center">
@@ -11,10 +14,18 @@ const Hero = () => {
           Quick access to emergency medical information and assistance when you need it most
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
+          <Button 
+            size="lg" 
+            onClick={() => navigate('/emergency-contacts')}
+            className="bg-primary hover:bg-primary/90"
+          >
             Emergency Contacts
           </Button>
-          <Button size="lg" variant="outline">
+          <Button 
+            size="lg" 
+            variant="outline"
+            onClick={() => navigate('/hospitals')}
+          >
             Find Hospitals
           </Button>
         </div>
